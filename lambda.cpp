@@ -106,7 +106,14 @@ int main(){
 
     cout << endl;
 
-  
+    cout << "usuwane wartosci z vektora od 90 do 150" << endl;
+
+    coll2.erase(remove_if(coll2.begin(), coll2.end(),
+      bind(logical_and<bool>(),
+      bind(greater_equal<int>(),placeholders::_1, 90),
+      bind(less_equal<int>(),placeholders::_1, 150))),
+        coll2.end());
+         printSTL(coll2 , "," , false);
 
     return 0;
 }
