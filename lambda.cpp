@@ -1,7 +1,15 @@
 #include <iostream>
+#include <array>
 #include <vector>
+#include <map>
+#include <set>
+#include <typeinfo>
+#include <string>
+#include <ctime>
 #include <algorithm>
 #include <deque>
+#include "numbers.h"
+
 
 using namespace std;
 
@@ -61,11 +69,12 @@ int main(){
 
     cout << "wynik wymuszany typ lambda4: " << lambda4(3, 3.33) << endl;
 
+    cout << endl;
 
-    deque<int> queue = {1,5,7,8,10,12,17,20};
-    printSTL(queue , "," , true);
-    transform(queue.cbegin(),queue.cend(),queue.begin(),negate<int>());
-    printSTL(queue , "," , false);
+    deque <int> que = {1,5,7,8,10,12,17,20};
+    printSTL(que , "," , true);
+    transform(que.cbegin(),que.cend(),que.begin(),negate<int>());
+    printSTL(que , "," , false);
 
     return 0;
 }
