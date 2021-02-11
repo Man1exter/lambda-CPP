@@ -38,7 +38,7 @@ auto lambda4 = [kolejna_wciagana = 10](int a, const double& b) -> long int{
 int main(){
 
     Funktor funktorBazy1, funktorBazy2;
-    
+
     funktorBazy1.pole = 5;
     funktorBazy2.pole = 7;
 
@@ -64,4 +64,8 @@ int main(){
 }
 
 
-
+//  PREDEFINIOWANE FUNKTORY:
+// less<> - przy sortowaniu funktor sortujacy wedlug kryterium
+// greater<> - np.set<int>, greater<int>> coll
+// negate<> - odwrocone znaki
+// multiplies<> - do kwadratu..
