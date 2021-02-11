@@ -8,6 +8,7 @@
 #include <ctime>
 #include <algorithm>
 #include <deque>
+#include <functional>
 #include "numbers.h"
 
 
@@ -82,9 +83,30 @@ int main(){
 
     cout << "odwrocenie kontenera jej wartosci" << endl;
 
-    set <int , greater <int>> coll1 = {3,6,9,12,15,18,21,24};
+    set <int , greater <int>> coll1 = {3,7,9,12,15,18,21,24};
     deque <int> coll2;
     printSTL(coll1 , "," , false);
+
+    cout << endl;
+
+    cout << "iloczyn 10 wartosci,obiekt wywolania _1 przez 10" << endl;
+    cout << "mnozona odwrocona razy 10 np. 3 * 10 = 30 itd.." << endl;
+
+    transform(coll1.cbegin(), coll1.cend(), back_inserter(coll2),
+       bind(multiplies<int>(), placeholders::_1,10));
+          printSTL(coll2, "," ,false);
+
+    cout << endl;
+
+    cout << "zastapienie elementow(wartosc 70) elementami o wartosci 1691" << endl;
+
+    replace_if(coll2.begin(), coll2.end(),
+       bind(equal_to <int>(), placeholders::_1, 70), 1691);
+          printSTL(coll2 , "," , false);
+
+    cout << endl;
+
+  
 
     return 0;
 }
