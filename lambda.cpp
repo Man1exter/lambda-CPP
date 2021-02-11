@@ -4,7 +4,16 @@
 
 using namespace std;
 
-auto lambda1 = []{
+
+class Funktor{
+    public:
+    int pole;
+    int operator()(int a)const{
+        return a * pole;
+    }
+};
+
+auto lambda1a = []{
 cout << "Po pozniejszym wywolaniu(w main) ~ lambda" << endl;
 };
 
@@ -26,9 +35,19 @@ auto lambda4 = [kolejna_wciagana = 10](int a, const double& b) -> long int{
 
 
 
-
 int main(){
-    lambda1();
+
+    Funktor funktorBazy1, funktorBazy2;
+    funktorBazy1.pole = 5;
+    funktorBazy2.pole = 7;
+
+    cout << "funktor1 z polem(klasa): " << funktorBazy1.pole << endl;
+    cout << "funktor2 z polem(klasa): " << funktorBazy2.pole << endl;
+
+    cout << "funktor1 z wartoscia: " << funktorBazy1(10) << endl;
+    cout << "funktor2 z wartoscia: " << funktorBazy2(20) << endl;
+
+    lambda1a();
 
     lambda2();
 
