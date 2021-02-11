@@ -13,7 +13,11 @@ auto lambda2 = []{
     cout << "Ze zmienna w srodku" << wciagana_lambda << endl;
 };
 
-auto licznik = [ i = 0]() mutable { cout << "To jest " << ++i << " wywolanie licznika" << endl;};
+auto licznik = [ i = 0 ]() mutable { cout << "To jest " << ++i << " wywolanie licznika" << endl;};
+
+auto lambda3 = [wciagana_liczba = 5](int a, const double& b){
+    return (wciagana_liczba + a) * b;
+};
 
 int main(){
     lambda1();
@@ -25,6 +29,7 @@ int main(){
     licznik();
     licznik();
 
+    cout << "wynik lambda3: " << lambda3(5, 10.5) << endl;
 
     return 0;
 }
