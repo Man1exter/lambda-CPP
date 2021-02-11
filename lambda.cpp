@@ -19,6 +19,14 @@ auto lambda3 = [wciagana_liczba = 5](int a, const double& b){
     return (wciagana_liczba + a) * b;
 };
 
+
+auto lambda4 = [kolejna_wciagana = 10](int a, const double& b) -> long int{
+    return (long int)((kolejna_wciagana + a) * b);
+};
+
+
+
+
 int main(){
     lambda1();
 
@@ -30,6 +38,8 @@ int main(){
     licznik();
 
     cout << "wynik lambda3: " << lambda3(5, 10.5) << endl;
+
+    cout << "wynik wymuszany typ lambda4: " << lambda4(3, 3.33) << endl;
 
     return 0;
 }
