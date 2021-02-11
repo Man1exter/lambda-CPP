@@ -71,10 +71,20 @@ int main(){
 
     cout << endl;
 
+    cout << "przeciwne znaki wartosci w kontenerze" << endl;
+
     deque <int> que = {1,5,7,8,10,12,17,20};
     printSTL(que , "," , true);
     transform(que.cbegin(),que.cend(),que.begin(),negate<int>());
     printSTL(que , "," , false);
+
+    cout << endl;
+
+    cout << "odwrocenie kontenera jej wartosci" << endl;
+
+    set <int , greater <int>> coll1 = {3,6,9,12,15,18,21,24};
+    deque <int> coll2;
+    printSTL(coll1 , "," , false);
 
     return 0;
 }
