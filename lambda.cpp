@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <deque>
 
 using namespace std;
 
@@ -60,6 +61,12 @@ int main(){
 
     cout << "wynik wymuszany typ lambda4: " << lambda4(3, 3.33) << endl;
 
+
+    deque<int> queue = {1,5,7,8,10,12,17,20};
+    printSTL(queue , "," , true);
+    transform(queue.cbegin(),queue.cend(),queue.begin(),negate<int>());
+    printSTL(queue , "," , false);
+
     return 0;
 }
 
@@ -69,3 +76,7 @@ int main(){
 // greater<> - np.set<int>, greater<int>> coll
 // negate<> - odwrocone znaki
 // multiplies<> - do kwadratu..
+
+// bind - wiazanie wywolania: predefiniowane obiekty
+// funkcyjne, mozemy laczyc z innymi wartosciami:
+// wynikiem bind jest rowniez funktor..
